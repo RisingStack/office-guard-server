@@ -1,5 +1,5 @@
 {
-  "name": "opsgenie-proxy",
+  "name": "office-guard-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.10.2",
     "express": "^4.11.1"
   }
 }

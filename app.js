@@ -1,19 +1,12 @@
 var https = require('https');
 var express = require('express');
-var bodyParser = require('body-parser');
 
 var app = express();
-
-//app.use(bodyParser.urlencoded({
-//  extended: true
-//}));
 
 app.get('/v1/json/alert', function (req, response) {
 
   var apiKey = req.query.apiKey;
   var message = req.query.message;
-
-  console.log(apiKey, message);
 
   var payload = {
     apiKey: apiKey,
