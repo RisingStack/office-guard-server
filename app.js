@@ -1,15 +1,16 @@
 var https = require('https');
 var express = require('express');
 
+var config = require('./config');
+
 var app = express();
 
 app.get('/v1/json/alert', function (req, response) {
 
-  var apiKey = req.query.apiKey;
   var message = req.query.message;
 
   var payload = {
-    apiKey: apiKey,
+    apiKey: config.opsGenie.apiKey,
     message: message
   };
 
