@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/v1/json/alert', function (req, response) {
-  var apiKey = req.param('apiKey');
-  var message = req.param('message');
+  var apiKey = req.body.apiKey;
+  var message = req.body.message;
 
   var payload = {
     apiKey: apiKey,
@@ -28,6 +28,9 @@ app.post('/v1/json/alert', function (req, response) {
     res.setEncoding('utf8');
     res.on('data', function (chunk) {
       response.json(JSON.parse(chunk));
+    });
+    res.on('error', function (err) {
+      console.log(err);
     });
   });
 
