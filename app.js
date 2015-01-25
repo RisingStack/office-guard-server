@@ -4,15 +4,14 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+//app.use(bodyParser.urlencoded({
+//  extended: true
+//}));
 
-app.post('/v1/json/alert', function (req, response) {
-  console.log(req.body);
+app.get('/v1/json/alert', function (req, response) {
 
-  var apiKey = req.body.apiKey;
-  var message = req.body.message;
+  var apiKey = req.query.apiKey;
+  var message = req.query.message;
 
   console.log(apiKey, message);
 
