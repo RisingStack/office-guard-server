@@ -9,8 +9,12 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/v1/json/alert', function (req, response) {
+  console.log(req.body);
+
   var apiKey = req.body.apiKey;
   var message = req.body.message;
+
+  console.log(apiKey, message);
 
   var payload = {
     apiKey: apiKey,
